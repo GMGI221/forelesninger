@@ -1,6 +1,6 @@
 #FROM mcr.microsoft.com/devcontainers/miniconda:0-3
-FROM ghcr.io/devcontainers/templates/miniconda:2.0.2
-
+#FROM ghcr.io/devcontainers/templates/miniconda:2.0.2
+FROM jupyter/minimal-notebook:2023-10-17
 
 # Set version
 #ENV GDS_ENV_VERSION "1.0"
