@@ -12,7 +12,13 @@
       "extensions": [
         "ms-python.python",
         "ms-toolsai.jupyter"
-      ]
+      ],
+      "settings":{
+        "python.defaultInterpreterPath": "/opt/conda/envs/gmgi221/bin/python"
+      }
     }
+  },
+  "containerEnv": {
+    "CONDA_DEFAULT_ENV": "gmgi221"
   }
 }
