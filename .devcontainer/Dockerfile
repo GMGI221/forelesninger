@@ -10,7 +10,7 @@ ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
 #--- Python ---#
 
-ADD ./gds_py_smaller.yml /home/${NB_USER}/
+ADD ./gds_py.yml /home/${NB_USER}/
 RUN mamba env create -f gds_py_smaller.yml \
  && source activate gds \
  && python -m ipykernel install --user --name gds --display-name "GDS-$GDS_ENV_VERSION" \
