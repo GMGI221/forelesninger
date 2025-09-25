@@ -8,8 +8,8 @@
   "features": {
     "ghcr.io/devcontainers/features/python:1": {
       "installConda": "true",
-      "condaEnvironmentFile": "gmgi221.yml", // <-- IMPORTANT: Name of your Conda file
-      "condaEnviroment":"gmgi221"
+      "environmentFile": "gmgi221.yml", // <-- IMPORTANT: Name of your Conda file
+      "condaEnvironment":"gmgi221"
     }
   },
 
