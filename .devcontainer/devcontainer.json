@@ -1,24 +1,30 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/miniconda
 {
-	"name": "gds_py",
-	"build": { 
-		"context": "..",
-		"dockerfile": "Dockerfile"
-	},
+  "name": "Conda Jupyter Codespace",
+  
+  // Use a base image that supports installing features
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu", 
 
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+  // Add the Conda/Mamba feature, pointing it to your environment file
+  "features": {
+    "ghcr.io/devcontainers/features/mamba:1": {
+      "version": "latest",
+      "installMicromamba": "true",
+      "createEnvironment": true,
+      "environmentFile": "gmgi221.yml" // <-- IMPORTANT: Name of your Conda file
+    }
+  },
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": []
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "conda init",
-
-	// Configure tool-specific properties.
-	
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  // Set the default shell command to activate the environment
+  // This ensures your Conda environment is active in the terminal
+  "postCreateCommand": "echo \"Environment created. You can start Jupyter Lab directly.\"", 
+  
+  // Optional: Recommended VS Code extensions for Python and Jupyter
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  }
 }
