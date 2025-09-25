@@ -2,6 +2,7 @@ name: gmgi221
 
 channels:
     - conda-forge
+    - defaults
 
 dependencies:
     - python=3.11
@@ -24,6 +25,7 @@ dependencies:
     - geojson
     - geopandas
     - geopy
+    - ipykernel
     - mapclassify
     - matplotlib
     - osmnx
