@@ -4,10 +4,12 @@
     "ghcr.io/devcontainers/features/python:1": {
       "installConda": true,
       "installJupyterlab": true,
-      "condaEnvironmentFile": "gmgi221.yml" // Path to your Conda environment file
+      "condaEnvironmentFile": "gmgi221.yml" 
     }
   },
   "postCreateCommand": "conda env create -f gmgi221.yml",
+  "postCreateCommand": "conda activate gmgi221",
+  
   "customizations": {
     "vscode": {
       "extensions": [
