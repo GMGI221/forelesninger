@@ -6,10 +6,8 @@
 
   // Add the Conda/Mamba feature, pointing it to your environment file
   "features": {
-    "ghcr.io/devcontainers/features/mamba:1": {
-      "version": "latest",
-      "installMicromamba": "true",
-      "createEnvironment": true,
+    "ghcr.io/devcontainers/features/python:1": {
+      "installConda": "true",
       "environmentFile": "gmgi221.yml" // <-- IMPORTANT: Name of your Conda file
     }
   },
