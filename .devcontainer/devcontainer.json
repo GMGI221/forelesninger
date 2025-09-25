@@ -8,14 +8,14 @@
   "features": {
     "ghcr.io/devcontainers/features/python:1": {
       "installConda": "true",
-      "environmentFile": "gmgi221.yml" // <-- IMPORTANT: Name of your Conda file
+      "condaEnvironmentFile": "gmgi221.yml", // <-- IMPORTANT: Name of your Conda file
+      "condaEnviroment":"gmgi221"
     }
   },
 
   // Set the default shell command to activate the environment
   // This ensures your Conda environment is active in the terminal
-  "postCreateCommand": "source /usr/local/share/miniconda/bin/activate gmgi221 && jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root &",
-  //"postCreateCommand": "echo \"Environment created. You can start Jupyter Lab directly.\"", 
+  
   
   // Optional: Recommended VS Code extensions for Python and Jupyter
   "customizations": {
