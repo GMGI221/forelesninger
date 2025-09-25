@@ -1,23 +1,24 @@
 {
   "name": "Conda Jupyter Codespace",
-  
-  // Use a base image that supports installing features
+  // Use the minimal base image for stability
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu", 
 
-  // Add the Conda/Mamba feature, pointing it to your environment file
   "features": {
+    // Use the Python Feature with Conda installation
     "ghcr.io/devcontainers/features/python:1": {
-      "installConda": "true",
-      "environmentFile": "gmgi221.yml", // <-- IMPORTANT: Name of your Conda file
-      "condaEnvironment":"gmgi221"
+      "installConda": true,
+      "condaEnvironmentFile": "gmgi221.yml",
+      "condaEnvironment": "gmgi221" // 👈 Match name from YML
     }
   },
 
-  // Set the default shell command to activate the environment
-  // This ensures your Conda environment is active in the terminal
-  
-  
-  // Optional: Recommended VS Code extensions for Python and Jupyter
+  // 👈 Use a simpler command to activate and start Jupyter.
+  // The Python feature should handle the 'conda' command being available.
+  "postCreateCommand": "conda run -n gmgi221 jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root &",
+
+  // Explicitly forward the port, although Codespaces usually finds 8888
+  "forwardPorts": [8888], 
+
   "customizations": {
     "vscode": {
       "extensions": [
